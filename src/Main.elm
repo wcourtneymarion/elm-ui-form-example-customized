@@ -14,11 +14,6 @@ import Element.Region as Region
 white =
     Element.rgb 1 1 1
 
-
-grey =
-    Element.rgb 0.9 0.9 0.9
-
-
 blue =
     Element.rgb 0 0 0.8
 
@@ -31,12 +26,12 @@ darkBlue =
     Element.rgb 0 0 0.9
 
 
-gray a =
+grey a =
     rgb255 a a a
 
 
 inputBoxBackground =
-    gray 50
+    grey 50
 
 
 main =
@@ -168,7 +163,7 @@ horizontalSlider model =
                 [ Element.width Element.fill
                 , Element.height (Element.px 2)
                 , Element.centerY
-                , Background.color grey
+                , Background.color <| grey 150
                 , Border.rounded 2
                 ]
                 Element.none
@@ -194,7 +189,7 @@ verticalSlider model =
                 [ Element.height Element.fill
                 , Element.width (Element.px 2)
                 , Element.centerX
-                , Background.color grey
+                , Background.color <| grey 150
                 , Border.rounded 2
                 ]
                 Element.none
@@ -213,12 +208,12 @@ verticalSlider model =
 
 button model =
     Input.button
-        [ Background.color blue
-        , Font.color white
+        [ Font.color white
+        , Background.color <| grey 75
         , Border.color darkBlue
         , paddingXY 32 16
         , Border.rounded 3
-
+        , Font.bold
         -- , width fill
         ]
         { onPress = Nothing
@@ -229,7 +224,7 @@ button model =
 view model =
     Element.layout
         [ Font.size 20
-        , Background.color <| gray 25
+        , Background.color <| grey 25
         , Font.color white
         ]
     <|
